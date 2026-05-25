@@ -56,6 +56,11 @@ All future changes should continue this pattern.
 - The user decides whether and when to actually push.
 - Do not push without explicit approval.
 
+## Commit vs Push Workflow
+
+- **Local commits**: You may auto-commit based on your own judgment whenever it feels appropriate.
+- **Pushes**: These are deliberate requests. Only request a push when you genuinely feel it is the right time (as pushing triggers versioning).
+
 ## General Guidelines
 
 - This is a pure Slopopolis project (high-velocity, low-utility, fun, slightly unhinged).
