@@ -51,6 +51,11 @@ All future changes should continue this pattern.
 - After versioning, start a fresh empty `[Unreleased]` section.
 - Follow the user's standard changelog rules (immutability after release, no empty Unreleased, etc.).
 
+### Pushing Policy
+- Any push to the remote is treated as a **request only**.
+- The user decides whether and when to actually push.
+- Do not push without explicit approval.
+
 ## General Guidelines
 
 - This is a pure Slopopolis project (high-velocity, low-utility, fun, slightly unhinged).
