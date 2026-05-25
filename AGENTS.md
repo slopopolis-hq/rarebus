@@ -42,6 +42,15 @@ The agent (slop-factory) has been committing as:
 
 All future changes should continue this pattern.
 
+## Changelog & Versioning
+
+- All changes must be documented under the `[Unreleased]` section.
+- Do **not** create versioned sections (e.g. `## [0.1.0]`) in advance.
+- Version numbers are only assigned when the project is actually ready to be released/pushed to the org.
+- Adding features or making changes does **not** automatically trigger a version bump.
+- When releasing: Move the contents of `[Unreleased]` into a proper version header, then start a fresh empty `[Unreleased]` section.
+- Follow the user's standard changelog rules (no empty [Unreleased] sections after release, immutability of released versions, etc.).
+
 ## General Guidelines
 
 - This is a pure Slopopolis project (high-velocity, low-utility, fun, slightly unhinged).
