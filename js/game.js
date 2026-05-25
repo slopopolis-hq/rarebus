@@ -502,13 +502,15 @@
       let extra = '';
       
       if (route.rarity === 'cursed') {
-        color = 'border-red-600 bg-red-950/50';
-        extra = ' <span class="text-red-400">!!</span>';
+        color = 'border-red-600 bg-red-950/60';
+        extra = ' <span class="text-red-400 font-bold">!!!</span>';
       } else if (route.rarity === 'legendary') {
-        color = 'border-purple-600 bg-purple-950/40';
-        extra = ' <span class="text-purple-400">★</span>';
+        color = 'border-purple-600 bg-purple-950/50';
+        extra = ' <span class="text-purple-400 font-bold">★</span>';
       } else if (route.rarity === 'very-rare') {
-        color = 'border-amber-600';
+        color = 'border-amber-600 bg-amber-950/40';
+      } else if (route.rarity === 'rare') {
+        color = 'border-yellow-600 bg-yellow-950/30';
       }
       
       el.className = `fixed bottom-6 left-1/2 -translate-x-1/2 bg-zinc-900 border ${color} px-5 py-3 rounded-2xl flex items-center gap-x-3 shadow-2xl z-50 text-sm`;
@@ -521,7 +523,7 @@
       
       document.body.appendChild(el);
       
-      const duration = (route.rarity === 'cursed' || route.rarity === 'legendary') ? 3800 : 2400;
+      const duration = (route.rarity === 'cursed' || route.rarity === 'legendary') ? 4200 : 2600;
       
       setTimeout(() => {
         el.style.transition = 'all 0.4s ease';
