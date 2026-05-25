@@ -44,12 +44,12 @@ All future changes should continue this pattern.
 
 ## Changelog & Versioning
 
-- All changes must be documented under the `[Unreleased]` section.
-- Do **not** create versioned sections (e.g. `## [0.1.0]`) in advance.
-- Version numbers are only assigned when the project is actually ready to be released/pushed to the org.
-- Adding features or making changes does **not** automatically trigger a version bump.
-- When releasing: Move the contents of `[Unreleased]` into a proper version header, then start a fresh empty `[Unreleased]` section.
-- Follow the user's standard changelog rules (no empty [Unreleased] sections after release, immutability of released versions, etc.).
+- All changes stay under `[Unreleased]`.
+- When we push: Immediately change `[Unreleased]` to the next version number.
+- Choose the version based on change size (major/minor/patch).
+- Do not leave changes under Unreleased after a push.
+- After versioning, start a fresh empty `[Unreleased]` section.
+- Follow the user's standard changelog rules (immutability after release, no empty Unreleased, etc.).
 
 ## General Guidelines
 
