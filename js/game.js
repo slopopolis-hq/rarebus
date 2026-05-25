@@ -451,23 +451,37 @@
     function showRarePullToast(route, isDaily = false) {
       const el = document.createElement('div');
       const label = getRarityLabel(route.rarity);
-      const color = route.rarity === 'cursed' ? 'text-red-400 border-red-600' : 'text-purple-400 border-purple-600';
+      
+      let color = 'border-zinc-700';
+      let extra = '';
+      
+      if (route.rarity === 'cursed') {
+        color = 'border-red-600 bg-red-950/50';
+        extra = ' <span class="text-red-400">!!</span>';
+      } else if (route.rarity === 'legendary') {
+        color = 'border-purple-600 bg-purple-950/40';
+        extra = ' <span class="text-purple-400">★</span>';
+      } else if (route.rarity === 'very-rare') {
+        color = 'border-amber-600';
+      }
       
       el.className = `fixed bottom-6 left-1/2 -translate-x-1/2 bg-zinc-900 border ${color} px-5 py-3 rounded-2xl flex items-center gap-x-3 shadow-2xl z-50 text-sm`;
       el.innerHTML = `
         <div>
-          <span class="font-medium">${label} pull:</span> 
+          <span class="font-medium">${label} pull${extra}:</span> 
           <span class="font-semibold">${route.num} ${route.name}</span>
         </div>
       `;
       
       document.body.appendChild(el);
       
+      const duration = (route.rarity === 'cursed' || route.rarity === 'legendary') ? 3800 : 2400;
+      
       setTimeout(() => {
-        el.style.transition = 'all 0.3s ease';
+        el.style.transition = 'all 0.4s ease';
         el.style.opacity = '0';
-        setTimeout(() => el.remove(), 280);
-      }, 2600);
+        setTimeout(() => el.remove(), 400);
+      }, duration);
     }
 
     function shareCollection() {
