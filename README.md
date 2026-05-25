@@ -47,3 +47,24 @@ Or just double-click it.
 - Actual GTFS import for people who want to ruin the joke
 
 Currently operating at peak slop velocity.
+
+## Publishing / Releasing to slopopolis-hq
+
+This repo is intended to live under the Slopopolis organization.
+
+1. Create a new repository called `rarebus` in the slopopolis-hq org (public).
+2. From this directory, run:
+
+```bash
+git remote add origin https://github.com/slopopolis-hq/rarebus.git
+git branch -M main
+git push -u origin main
+```
+
+The agent (slop-factory) has been committing as:
+
+```
+--author="slop-factory <ryan+slopfactory@slopopolis.com>"
+```
+
+All future changes should continue this pattern.
