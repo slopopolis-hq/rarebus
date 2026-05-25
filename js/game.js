@@ -347,6 +347,32 @@
         dailyBtn.disabled = false;
         dailyText.textContent = "TODAY'S RIDE";
       }
+
+      // Render milestones
+      renderMilestones();
+    }
+
+    function renderMilestones() {
+      const container = document.getElementById('milestones');
+      if (!container) return;
+
+      const entries = Object.values(state.collection);
+      const unique = entries.length;
+      const cursed = entries.filter(e => e.route.rarity === 'cursed' || e.route.rarity === 'legendary').length;
+      const personallyRode = entries.filter(e => e.personallyRode).length;
+      const score = calculateSickoScore();
+
+      const milestones = [
+        { text: "Collect 5 routes", done: unique >= 5 },
+        { text: "Find a Rare route", done: entries.some(e => e.route.rarity === 'rare' || e.route.rarity === 'very-rare') },
+        { text: "Find a Cursed route", done: cursed > 0 },
+        { text: "Personally rode 3 routes", done: personallyRode >= 3 },
+        { text: "Reach 500 Unhinged Score", done: score >= 500 },
+      ];
+
+      container.innerHTML = milestones.map(m => 
+        `<div class="${m.done ? 'text-emerald-400' : 'text-zinc-500'}">• ${m.text} ${m.done ? '✓' : ''}</div>`
+      ).join('');
     }
 
     function renderCollection() {
