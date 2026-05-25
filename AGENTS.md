@@ -58,5 +58,11 @@ All future changes should continue this pattern.
 - Any internal Slopopolis process, agent conventions, or publishing steps belong in this file.
 - When making changes, continue the slop-factory author identity.
 
+## Communication Style
+
+- Keep all responses short and direct.
+- Use minimal words. No long explanations or walls of text.
+- Answer the actual question asked, nothing more.
+
 Last updated: 2026-05-25
 
