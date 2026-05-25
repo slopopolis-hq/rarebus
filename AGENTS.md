@@ -4,20 +4,20 @@
 
 This document contains the operational and Slopopolis-specific instructions for working on RareBus.
 
-## Commit Convention
+## Commit Identity (Strict Rule)
 
-All commits in this repository **must** be made as the slop-factory bot using this exact author line:
+**Every commit in this repository must show slop-factory as BOTH Author and Committer.**
 
-```bash
---author="slop-factory <ryan+slopfactory@slopopolis.com>"
-```
+- Author: `slop-factory <ryan+slopfactory@slopopolis.com>`
+- Committer: `slop-factory <ryan+slopfactory@slopopolis.com>`
 
-**Example commit:**
-```bash
-git commit -m "Add new cursed routes" --author="slop-factory <ryan+slopfactory@slopopolis.com>"
-```
+**Never** allow `ryanphanna` (or any personal human identity) to appear in the Author or Committer field.
 
-This convention keeps human craft commits separate from AI-generated slop in the broader Slopopolis system.
+Before committing or pushing, always ensure the slop-factory git identity is active (via folder-based includeIf rules, `~/.gitconfig-slop-factory`, or explicit config).
+
+**Violation of this rule is not acceptable.** If it occurs, history must be immediately rewritten to remove the personal identity.
+
+This is a core Slopopolis requirement to keep human and AI commit graphs separate.
 
 ## Publishing / Releasing to slopopolis-hq
 
