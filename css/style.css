@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+body { font-family: 'Inter', system_ui, sans-serif; }
+.display { font-family: 'Space Grotesk', 'Inter', sans-serif; font-weight: 600; }
+
+.route-card { transition: transform 0.2s cubic-bezier(0.23,1,0.32,1), box-shadow 0.2s; }
+.route-card:hover { transform: translateY(-1px); }
+
+.rarity-common { border-color: #3f3f46; }
+.rarity-uncommon { border-color: #0ea5e9; box-shadow: 0 0 0 1px #0ea5e9; }
+.rarity-rare { border-color: #eab308; box-shadow: 0 0 0 1px #eab308; }
+.rarity-very-rare { border-color: #f59e0b; box-shadow: 0 0 0 1px #f59e0b; }
+.rarity-legendary { border-color: #a855f7; box-shadow: 0 0 0 1px #a855f7; }
+.rarity-cursed { border-color: #ef4444; box-shadow: 0 0 0 1px #ef4444; animation: cursed 2.5s infinite; }
+
+@keyframes cursed {
+  0%,100% { box-shadow: 0 0 0 1px #ef4444; }
+  50% { box-shadow: 0 0 0 3px #ef4444; }
+}
+
+.hop-btn { transition: transform 0.1s cubic-bezier(0.23,1,0.32,1); }
+.hop-btn:active { transform: scale(0.97); }
+
+.log-entry { font-size: 13px; }
+.sicko-score { font-variant-numeric: tabular-nums; }
+.transit-pill { font-size: 10px; letter-spacing: 0.5px; }
+.new-route { animation: newRoutePop 0.6s cubic-bezier(0.23,1,0.32,1); }
+
+@keyframes newRoutePop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.04); }
+  100% { transform: scale(1); opacity: 1; }
+}
