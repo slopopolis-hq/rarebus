@@ -77,11 +77,22 @@
       </div>
     </div>
 
+    <!-- What is this? -->
+    <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 mb-6 text-sm">
+      <div class="font-semibold mb-2">What is RareBus?</div>
+      <div class="text-zinc-400">
+        A dumb collection game for people who are unhealthily into public transit.<br>
+        Click <strong>Hop On</strong> to get random routes and add them to your personal museum of questionable decisions.<br>
+        Rarer and more cursed routes = higher Sicko Score. That's it.
+      </div>
+    </div>
+
     <!-- Stats Bar -->
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
       <div class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3">
         <div class="text-[10px] text-zinc-500 tracking-wider">SICKO SCORE</div>
         <div id="sicko-score" class="display text-4xl font-semibold tracking-tighter sicko-score">0</div>
+        <div class="text-[9px] text-zinc-500 -mt-0.5">Higher = more cursed collection</div>
       </div>
       <div class="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-3">
         <div class="text-[10px] text-zinc-500 tracking-wider">CURRENT STREAK</div>
@@ -116,25 +127,34 @@
     <!-- Action Buttons -->
     <div class="flex flex-col sm:flex-row gap-3 mb-8">
       <!-- Normal Hop On -->
-      <button onclick="takeRide(false)"
-              class="hop-btn flex-1 flex items-center justify-center gap-x-3 bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-500 text-zinc-950 font-semibold text-lg py-5 rounded-2xl shadow-lg shadow-yellow-500/20 transition-all">
-        <i class="fa-solid fa-bus text-2xl"></i>
-        <span>HOP ON</span>
-      </button>
+      <div class="flex-1">
+        <button onclick="takeRide(false)"
+                class="hop-btn w-full flex items-center justify-center gap-x-3 bg-yellow-400 hover:bg-yellow-300 active:bg-yellow-500 text-zinc-950 font-semibold text-lg py-5 rounded-2xl shadow-lg shadow-yellow-500/20 transition-all">
+          <i class="fa-solid fa-bus text-2xl"></i>
+          <span>HOP ON</span>
+        </button>
+        <div class="text-[10px] text-center text-zinc-500 mt-1.5">Get a random route for your collection</div>
+      </div>
 
       <!-- Daily Ride -->
-      <button onclick="takeDailyRide()"
-              id="daily-btn"
-              class="hop-btn flex-1 sm:flex-none flex items-center justify-center gap-x-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 font-medium py-5 px-6 rounded-2xl transition-all text-sm">
-        <i class="fa-solid fa-calendar-day"></i>
-        <span id="daily-text">TODAY'S RIDE</span>
-      </button>
+      <div class="flex-1 sm:flex-none">
+        <button onclick="takeDailyRide()"
+                id="daily-btn"
+                class="hop-btn w-full flex items-center justify-center gap-x-3 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 font-medium py-5 px-6 rounded-2xl transition-all text-sm">
+          <i class="fa-solid fa-calendar-day"></i>
+          <span id="daily-text">TODAY'S RIDE</span>
+        </button>
+        <div class="text-[10px] text-center text-amber-400/70 mt-1.5">One special pull per day</div>
+      </div>
     </div>
 
     <!-- Collection -->
     <div class="mb-6">
       <div class="flex items-baseline justify-between px-1 mb-3">
-        <div class="display text-xl tracking-tight font-semibold">Your Collection</div>
+        <div>
+          <div class="display text-xl tracking-tight font-semibold">Your Collection</div>
+          <div class="text-[10px] text-zinc-500 -mt-0.5">Check the box on routes you've actually ridden in real life</div>
+        </div>
         <div id="collection-count" class="text-xs px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-zinc-400"></div>
       </div>
       
@@ -147,8 +167,10 @@
     <!-- Recent Activity -->
     <div>
       <div class="flex items-baseline justify-between px-1 mb-3">
-        <div class="display text-xl tracking-tight font-semibold">Recent Rides</div>
-        <div class="text-[10px] text-zinc-500">MOST RECENT FIRST</div>
+        <div>
+          <div class="display text-xl tracking-tight font-semibold">Recent Rides</div>
+          <div class="text-[10px] text-zinc-500 -mt-0.5">Routes you've collected recently</div>
+        </div>
       </div>
       <div id="recent-log" 
            class="bg-zinc-900 border border-zinc-800 rounded-2xl divide-y divide-zinc-800 text-sm max-h-[320px] overflow-auto">
@@ -510,8 +532,9 @@
         grid.innerHTML = `
           <div class="col-span-full border border-zinc-800 rounded-2xl h-44 flex flex-col items-center justify-center text-center p-6 bg-zinc-900">
             <div class="text-4xl mb-3 opacity-40">🚌</div>
-            <div class="text-sm text-zinc-400 max-w-[260px]">
-              Your collection is empty. This is embarrassing for someone who claims to care about transit.
+            <div class="text-sm text-zinc-400 max-w-[280px]">
+              Your collection is empty.<br>
+              Click <strong>Hop On</strong> above to start collecting routes.
             </div>
           </div>`;
         return;
@@ -557,7 +580,7 @@
       const container = document.getElementById('recent-log');
       
       if (state.rides.length === 0) {
-        container.innerHTML = `<div class="px-5 py-6 text-center text-xs text-zinc-500">No rides logged. The shame has not yet begun.</div>`;
+        container.innerHTML = `<div class="px-5 py-6 text-center text-xs text-zinc-500">No rides yet. Click Hop On above to get started.</div>`;
         return;
       }
       
@@ -657,33 +680,26 @@
     function init() {
       loadState();
       
-      // First time seed (gentle start)
+      // First time seed (very light)
       if (state.rides.length === 0) {
-        const seed = ROUTES.filter(r => r.rarity === 'common' || r.rarity === 'uncommon').slice(0, 4);
-        const base = new Date(Date.now() - 1000 * 60 * 60 * 36);
-        
-        seed.forEach((r, i) => {
-          const t = new Date(base.getTime() + i * 1000 * 60 * 67);
+        const demo = ROUTES.find(r => r.id === "tor-1"); // 1 - Queen East
+        if (demo) {
+          const t = new Date(Date.now() - 1000 * 60 * 60 * 12);
           state.rides.push({
-            id: 900 + i,
+            id: 900,
             time: t.toLocaleTimeString('en-US', {hour:'numeric', minute:'2-digit', hour12:true}).toLowerCase(),
-            route: r,
-            story: "The beginning of the end.",
+            route: demo,
+            story: "Demo ride (you can delete these by resetting)",
             isDaily: false,
             timestamp: t.toISOString()
           });
-          if (!state.collection[r.id]) {
-            state.collection[r.id] = {
-              route: r,
-              count: 1,
-              firstSeen: t.toISOString(),
-              personallyRode: i === 0
-            };
-          }
-        });
-        state.streak.current = 1;
-        state.streak.best = 1;
-        state.streak.lastRideDate = new Date().toISOString().split('T')[0];
+          state.collection[demo.id] = {
+            route: demo,
+            count: 1,
+            firstSeen: t.toISOString(),
+            personallyRode: false
+          };
+        }
         saveState();
       }
       
