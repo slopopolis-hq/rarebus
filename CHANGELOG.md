@@ -12,13 +12,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rarity tiers: Common, Uncommon, Rare, Very Rare, Legendary, Cursed
 - Daily Ride system (one higher-quality pull per calendar day)
 - Streak tracking (current streak + personal best)
-- Sicko Score (weighted scoring based on rarity, variety, streaks, and personally ridden routes)
+- Unhinged Score (replaced previous Sicko Score)
 - "I have actually ridden this" personal flags on collected routes
-- Large hand-written database of routes with flavorful, personality-driven descriptions across multiple cities
-- Share Collection feature (generates a formatted brag for clipboard)
-- Visual feedback for rare/legendary/cursed pulls
-- Keyboard support (`/` to hop on)
-- Internal `AGENTS.md` for Slopopolis conventions (gitignored)
+- Large hand-written database of routes with flavorful descriptions
+- Share Collection feature
+- Simple Milestones system for light progression
+- Basic rarity filtering in the collection view
+- Improved first-time experience and onboarding text
+- Softened overall tone ("weird about transit" instead of "unwell")
+- Light refactor: split into index.html + css/style.css + js/routes.js + js/game.js (still fully static)
 
 ### Notes
 - All work stays under `[Unreleased]` until a release is cut.
