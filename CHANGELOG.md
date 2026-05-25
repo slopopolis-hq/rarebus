@@ -21,9 +21,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Internal `AGENTS.md` for Slopopolis conventions (gitignored)
 
 ### Notes
-- This is the initial build of the project. All work to date is captured under `[Unreleased]`.
-- First tagged release is planned as `0.1.0` once published to the slopopolis-hq organization.
-
-## [0.1.0] - TBD
-
-> Placeholder for first public release. Will be populated from `[Unreleased]` when the repo is pushed.
+- All work stays under `[Unreleased]` until a release is cut.
