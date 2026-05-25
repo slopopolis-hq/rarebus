@@ -106,6 +106,8 @@
       dailyClaimed: null,    // date string
     };
 
+    let currentRarityFilter = 'all';
+
     function loadState() {
       const saved = localStorage.getItem('rarebus_v2');
       if (saved) state = JSON.parse(saved);
@@ -375,16 +377,34 @@
       ).join('');
     }
 
+    function filterByRarity(rarity) {
+      currentRarityFilter = rarity;
+
+      document.querySelectorAll('.rarity-filter').forEach(btn => {
+        btn.classList.remove('active-filter', 'bg-zinc-700');
+        if (btn.dataset.filter === rarity) {
+          btn.classList.add('active-filter', 'bg-zinc-700');
+        }
+      });
+
+      renderCollection();
+    }
+
     function renderCollection() {
       const grid = document.getElementById('collection-grid');
       const countEl = document.getElementById('collection-count');
       
-      const entries = Object.values(state.collection).sort((a,b) => {
+      let entries = Object.values(state.collection).sort((a,b) => {
         const ra = getRarityWeight(b.route.rarity);
         const rb = getRarityWeight(a.route.rarity);
         if (ra !== rb) return ra - rb;
         return b.count - a.count;
       });
+
+      // Apply rarity filter
+      if (currentRarityFilter !== 'all') {
+        entries = entries.filter(e => e.route.rarity === currentRarityFilter);
+      }
       
       countEl.textContent = `${entries.length} / ${ROUTES.length} collected`;
       
