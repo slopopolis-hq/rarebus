@@ -129,15 +129,36 @@ const ROUTES = [
       {id:"mx-1", num:"1", name:"Metro Line 1", city:"Mexico City", rarity:"rare", text:"The subway that moves at the speed of a very determined turtle."},
       {id:"tyo-yamanote", num:"Yamanote", name:"Yamanote Line", city:"Tokyo", rarity:"uncommon", text:"The circle of hell that somehow runs on time."},
     ];
-      {id:"chi-66", num:"66", name:"Chicago Avenue", city:"Chicago", rarity:"rare", text:"The bus that proves Chicago is secretly a grid of suffering."},
-      {id:"sf-38", num:"38", name:"Geary", city:"San Francisco", rarity:"uncommon", text:"The bus that moves at the speed of a disappointed pedestrian."},
-      {id:"tor-52", num:"52", name:"Lawrence West", city:"Toronto", rarity:"very-rare", text:"A bus route so long it has its own weather systems."},
-      {id:"cursed-6", num:"???", name:"The Bus That Only Runs When It Feels Like It", city:"Everywhere", rarity:"cursed", text:"Schedule is a suggestion. God is the driver."},
-      {id:"ldn-25", num:"25", name:"Stratford to Oxford Circus", city:"London", rarity:"legendary", text:"The bus that has seen things. Dark things. Regency-era things."},
+
+      // === MAJOR HIGH-QUALITY EXPANSION ===
+
+      // More Toronto
+      {id:"tor-63-oss", num:"63", name:"Ossington", city:"Toronto", rarity:"uncommon", text:"The bus that turned normal neighborhoods into arguments about avocado toast."},
+      {id:"tor-52-law", num:"52", name:"Lawrence West", city:"Toronto", rarity:"very-rare", text:"A bus so long it has its own time zones and weather systems."},
+      {id:"tor-129-wil", num:"129", name:"Wilson", city:"Toronto", rarity:"uncommon", text:"Exists primarily to punish people trying to get to the airport with dignity."},
+
+      // Stronger New York
+      {id:"nyc-bx1", num:"Bx1", name:"Riverdale", city:"New York", rarity:"rare", text:"The bus that makes the Bronx feel like another country with better bagels."},
       {id:"nyc-m104", num:"M104", name:"Broadway", city:"New York", rarity:"uncommon", text:"The bus equivalent of main character syndrome."},
-      {id:"tor-300x", num:"300A", name:"Eglinton West Night Bus", city:"Toronto", rarity:"legendary", text:"The one that turns the suburbs into a David Lynch film."},
-      {id:"cursed-7", num:"Ghost", name:"The 3 a.m. Streetcar That Doesn't Exist on the Schedule", city:"Toronto", rarity:"cursed", text:"It picks up passengers who no longer exist in the timetable."},
-      {id:"chi-9", num:"9", name:"Ashland", city:"Chicago", rarity:"rare", text:"The bus that runs parallel to your entire life choices."},
+      {id:"nyc-m66", num:"M66", name:"Cross-Town", city:"New York", rarity:"rare", text:"The bus that exists purely to make you late for everything that matters."},
+
+      // Chicago
+      {id:"chi-9", num:"9", name:"Ashland", city:"Chicago", rarity:"rare", text:"Long, straight, and emotionally devastating."},
+      {id:"chi-66", num:"66", name:"Chicago Avenue", city:"Chicago", rarity:"uncommon", text:"The bus that proves Chicago is secretly a grid of quiet suffering."},
+
+      // West Coast
+      {id:"sf-38", num:"38", name:"Geary", city:"San Francisco", rarity:"uncommon", text:"Moves at the speed of a disappointed pedestrian with a grudge."},
+      {id:"la-20", num:"20", name:"Metro Local", city:"Los Angeles", rarity:"rare", text:"A bus in a city that was actively designed to make buses fail."},
+
+      // UK
+      {id:"ldn-55", num:"55", name:"Hackney Central", city:"London", rarity:"uncommon", text:"A bus so slow it has developed its own subculture of regular complainers."},
       {id:"ldn-159", num:"159", name:"Oxford Circus to Streatham", city:"London", rarity:"very-rare", text:"A bus so long it qualifies as intercity travel."},
-      {id:"tor-129", num:"129", name:"Wilson", city:"Toronto", rarity:"uncommon", text:"The bus that exists solely to make airport runs feel like a punishment."},
-    ];
+
+      // More cursed
+      {id:"cursed-6", num:"???", name:"The Bus That Only Runs When It Feels Like It", city:"Everywhere", rarity:"cursed", text:"Schedule is a suggestion. God is the driver."},
+      {id:"cursed-7", num:"Ghost", name:"The 3 a.m. Streetcar That Doesn't Exist on the Schedule", city:"Toronto", rarity:"cursed", text:"It picks up passengers who no longer appear in any timetable."},
+      {id:"cursed-8", num:"404", name:"The Route That Doesn't Appear on Any Map", city:"Multiple Cities", rarity:"cursed", text:"You didn't miss it. It simply refuses to be perceived."},
+
+      // International
+      {id:"ber-m41", num:"M41", name:"Metrobus", city:"Berlin", rarity:"rare", text:"The bus that makes you feel like you're in a different decade, usually a worse one."},
+      {id:"par-91", num:"91", name:"Gare du Nord", city:"Paris", rarity:"very-rare", text:"The bus equivalent of existential dread with good lighting."},

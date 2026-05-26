@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Light refactor: split into index.html + css/style.css + js/routes.js + js/game.js (still fully static)
 - Significantly expanded route database with higher-quality, more varied, and funnier writing across more cities
 - Improved feedback and celebration on rare/legendary/cursed route pulls
+- Cleaned up duplication in routes.js and added another batch of strong new entries
 - Added early scaffolding for Collections system (light progression through curated route sets)
 
 ### Notes
