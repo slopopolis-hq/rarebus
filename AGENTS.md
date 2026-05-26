@@ -74,5 +74,30 @@ All future changes should continue this pattern.
 - Use minimal words. No long explanations or walls of text.
 - Answer the actual question asked, nothing more.
 
+## Slop Ideas Database (Notion)
+
+This is the central database for tracking all Slopopolis ideas and projects.
+
+**Database URL:** https://www.notion.so/36b9563c9a4980f2b8c8e5d99cbea4a7
+
+**Main Data Source ID:** `36b9563c-9a49-8058-9042-000bb54577e0` (use with query tools)
+
+**Current Properties:**
+
+- **Name** (title) – Idea/project title
+- **Description** (text) – The original spark or idea details
+- **Status** (status) – Workflow status with groups:
+  - to_do: Backlog
+  - in_progress: Maintained, Built
+  - complete: Blocked, Archived
+- **Priority** (select) – High, Medium, Low
+- **Repo** (url) – Link to the GitHub repository (when applicable)
+- **Notes** (text) – Additional thoughts, learnings, or context
+
+**Best Practices:**
+- Always use the `fetch` tool first on a database or page to get the latest schema and data source URLs before querying or updating.
+- When creating or updating pages, match property names exactly (case sensitive).
+- Use data source URLs (collection://...) when working with database entries.
+
 Last updated: 2026-05-25
 
