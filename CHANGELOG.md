@@ -21,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved first-time experience and onboarding text
 - Softened overall tone ("weird about transit" instead of "unwell")
 - Light refactor: split into index.html + css/style.css + js/routes.js + js/game.js (still fully static)
+- Significantly expanded route database with higher-quality, more varied, and funnier writing across more cities
+- Improved feedback and celebration on rare/legendary/cursed route pulls
 
 ### Notes
 - All work stays under `[Unreleased]` until a release is cut.
